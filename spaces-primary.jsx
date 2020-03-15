@@ -20,7 +20,7 @@ const style = {
 };
 
 export const refreshFrequency = false;
-export const command = "./nibar/scripts/spaces_primary.sh";
+export const command = "./ayu-nibar/scripts/spaces_primary.sh";
 
 export const render = ({ output }) => {
   const data = parse(output);

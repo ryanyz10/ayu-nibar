@@ -8,7 +8,7 @@ const render = ({ output }) => {
     <div>
       <div
         style={
-          percentage < 10 && charging == false
+          percentage < 30 && charging == false
             ? { color: styles.colors.red }
             : null
         }
