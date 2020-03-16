@@ -31,14 +31,13 @@ const clock_style = {
     gridGap: "20px",
     position: "fixed",
     overflow: "hidden",
-    right: "calc(50% - 100px)",
+    right: "calc(50% - 63px)",
     top: "0px",
     color: styles.colors.dim,
     fontFamily: styles.fontFamily,
     fontSize: styles.fontSize,
     lineHeight: styles.lineHeight,
     fontWeight: styles.fontWeight,
-    textAlign: "center"
 };
 
 export const refreshFrequency = 10000;

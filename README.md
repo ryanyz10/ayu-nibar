@@ -2,7 +2,7 @@
 
 Simple [Übersicht](https://github.com/felixhageloh/uebersicht) widget status bar with [yabai](https://github.com/koekeishiya/yabai) support.
 
-Originally forked from https://github.com/ajdnik/powerbar. I made it work with yabai and tweaked the aesthetics to match my preference.
+Forked from [nibar](https://github.com/kkga/nibar), which provided a great base to work with. I'm mostly changing it to fit my aesthetic and adding some additional functionality I find useful.
 
 ## Screenshot
 
@@ -13,7 +13,7 @@ Originally forked from https://github.com/ajdnik/powerbar. I made it work with y
 Clone this repo to your Übersicht widgets directory.
 
 ```bash
-$ git clone https://github.com/kkga/nibar $HOME/Library/Application\ Support/Übersicht/widgets/nibar
+$ git clone https://github.com/ryanyz10/ayu-nibar $HOME/Library/Application\ Support/Übersicht/widgets/ayu-nibar
 ```
 
 ## Dependencies

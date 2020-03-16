@@ -6,7 +6,7 @@ String.prototype.regexIndexOf = function(regex, startpos) {
 }
 
 const parse_name = (name, artist) => {
-    let regex = new RegExp('[,:()]');
+    let regex = new RegExp('[,:()-]');
 
     let index = name.regexIndexOf(regex); 
     if (index > 0) {
