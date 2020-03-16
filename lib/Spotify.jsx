@@ -25,14 +25,20 @@ const parse_name = (name, artist) => {
 
 const render = ({ output }) => {
     let status = output.status;
+    if (status == 'stopped' || status == '') {
+        return null;
+    }
+
     let artist = output.artist
     let name = parse_name(output.name, artist);
     let airplay = (status == 'playing' && artist == '' && name == '')
+
+    if (airplay) {
+        return null
+    }
+
     let paused = (status == 'paused')
 
-    if (status == 'stopped' || airplay) {
-        return null;
-    }
 
     return (
         <div>

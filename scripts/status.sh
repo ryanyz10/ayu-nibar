@@ -22,9 +22,9 @@ WIFI_SSID=$(networksetup -getairportnetwork en0 | cut -c 24-)
 
 DND=$(defaults -currentHost read com.apple.notificationcenterui doNotDisturb)
 
-SPOTIFY_STATUS=$(osascript -e "tell application \"Spotify\" to player state as string")
-SPOTIFY_ARTIST=$(osascript -e "tell application \"Spotify\" to artist of current track as string")
-SPOTIFY_NAME=$(osascript -e "tell application \"Spotify\" to name of current track as string")
+SPOTIFY_STATUS=$(osascript -e "if application \"Spotify\" is running then" -e "tell application \"Spotify\" to player state as string" -e "end if")
+SPOTIFY_ARTIST=$(osascript -e "if application \"Spotify\" is running then" -e "tell application \"Spotify\" to artist of current track as string" -e "end if")
+SPOTIFY_NAME=$(osascript -e "if application \"Spotify\" is running then" -e "tell application \"Spotify\" to name of current track as string" -e "end if")
 
 WEATHER=$(./ayu-nibar/scripts/weather.py)
 
