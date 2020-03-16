@@ -28,14 +28,22 @@ const get_conditions = (code, day) => {
     }
 }
 
+const get_color = (unit, temp) => {
+    switch (unit) {
+        case "f": return (temp >= 86 ? styles.colors.red : (temp <= 46.4 ? styles.colors.accent : null));
+        case "c": return (temp >= 30 ? styles.colors.red : (temp <= 8 ? styles.colors.accent : null));
+        default: return (temp >= 303.15 ? styles.colors.red : (temp <= 281.15 ? styles.colors.accent : null));
+    }
+}
+
 export const render = ({ output }) => {
-    let [code, icon, temp] = output.split("|");
+    let [code, icon, temp, unit] = output.split("|");
     code = Number(code);
     let day = icon == 'd';
     let condition = get_conditions(code, day);
 
     return (
-        <div>
+        <div style= {{color: get_color(unit, temp) }}>
         {condition} {temp}
         </div>
     );

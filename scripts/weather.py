@@ -85,5 +85,5 @@ try:
 except Exception:
     pass
 
-print("{}|{}|{}".format(weather_id, "d" if "d" in weather_icon else "n", display_temp))
+print("{}|{}|{}|{}".format(weather_id, "d" if "d" in weather_icon else "n", display_temp, unit))
 
