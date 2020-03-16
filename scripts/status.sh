@@ -26,6 +26,8 @@ SPOTIFY_STATUS=$(osascript -e "tell application \"Spotify\" to player state as s
 SPOTIFY_ARTIST=$(osascript -e "tell application \"Spotify\" to artist of current track as string")
 SPOTIFY_NAME=$(osascript -e "tell application \"Spotify\" to name of current track as string")
 
+WEATHER=$(./ayu-nibar/scripts/weather.py)
+
 echo $(cat <<-EOF
 {
     "datetime": {
@@ -49,7 +51,8 @@ echo $(cat <<-EOF
         "status": "$SPOTIFY_STATUS",
         "artist": "$SPOTIFY_ARTIST",
         "name": "$SPOTIFY_NAME"
-    }
+    },
+    "weather": "$WEATHER"
 }
 EOF
 )

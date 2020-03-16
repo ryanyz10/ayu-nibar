@@ -1,4 +1,4 @@
-# nibar
+# ayu-nibar
 
 Simple [Übersicht](https://github.com/felixhageloh/uebersicht) widget status bar with [yabai](https://github.com/koekeishiya/yabai) support.
 
@@ -53,5 +53,26 @@ yabai -m signal --add event=space_changed \
 yabai -m signal --add event=display_changed \
     action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-secondary-jsx\"'"
 ```
+
+### Weather
+
+I wrote a quick python script to fetch the current location and weather using [ipapi](https://ipapi.com/) and [openweathermap](https://openweathermap.org/api). You will need to sign up for API keys on the website. The script depends on the requests package which you can install as follows:
+
+```bash
+pip3 install requests 
+```
+
+The keys are specified in a `.config` file in the root of the project. It should be structured as below:
+
+```
+[geolocation]
+key=<ipapi key here>
+
+[weather]
+key=<openweathermap key here>
+unit=f
+```
+
+Unit is the temperature unit, which can either be fahrenheit or celsius (but defaults to kelvin if neither are selected).
 
 

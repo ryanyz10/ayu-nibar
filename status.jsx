@@ -5,6 +5,7 @@ import Wifi from "./lib/Wifi.jsx";
 import Dnd from "./lib/Dnd.jsx";
 import Error from "./lib/Error.jsx";
 import Spotify from "./lib/Spotify.jsx";
+import Weather from "./lib/Weather.jsx";
 import parse from "./lib/parse.jsx";
 import styles from "./lib/styles.jsx";
 
@@ -53,6 +54,7 @@ export const render = ({ output }) => {
             </div>
         );
     }
+
     return (
         <div>
         <div style={clock_style}>
@@ -61,6 +63,7 @@ export const render = ({ output }) => {
 
         <div style={style}>
         <Cpu output={data.cpu} />
+        <Weather output={data.weather} />
         <Wifi output={data.wifi} />
         <Battery output={data.battery} />
         <Spotify output={data.spotify} />
