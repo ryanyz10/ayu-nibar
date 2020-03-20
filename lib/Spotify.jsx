@@ -11,7 +11,7 @@ const parse_name = (name, artist) => {
     let index = name.regexIndexOf(regex); 
     if (index > 0) {
         let sub = name.substring(0, index).trim();
-        if (artist.includes(sub) || sub.match(/[0-9]/)) {
+        if (artist.includes(sub)) {
             name = name.substring(index + 1);
             index = name.regexIndexOf(regex);
             sub = name.substring(0, index);
@@ -31,7 +31,7 @@ const render = ({ output }) => {
 
     let artist = output.artist
     let name = parse_name(output.name, artist);
-    let airplay = (status == 'playing' && artist == '' && name == '')
+    let airplay = (artist == '' && name == '')
 
     if (airplay) {
         return null
