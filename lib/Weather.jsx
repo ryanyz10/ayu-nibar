@@ -37,6 +37,9 @@ const get_color = (unit, temp) => {
 }
 
 export const render = ({ output }) => {
+    if (output === "Error") {
+        return null;
+    }
     let [code, icon, temp, unit] = output.split("|");
     code = Number(code);
     let day = icon == 'd';

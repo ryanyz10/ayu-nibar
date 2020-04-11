@@ -64,15 +64,23 @@ now = datetime.now()
 geo_key, weather_key, unit = get_config()
 
 if not geo_last_fetched or geo_last_fetched + timedelta(days=1) < now:
-    ip_addr = get_ip_addr()
-    lat, lon = get_location(ip_addr, geo_key)
-    geo_last_fetched = now
+    try:
+        ip_addr = get_ip_addr()
+        lat, lon = get_location(ip_addr, geo_key)
+        geo_last_fetched = now
+    except requests.exceptions.ConnectionError:
+        print("Error")
+        quit()
 else:
     lat, lon = location_obj
 
 if not weather_last_fetched or weather_last_fetched + timedelta(seconds=20) < now:
-    weather_last_fetched = now
-    weather_id, weather_icon, temp = get_weather_at_location(lat, lon, weather_key)
+    try:
+        weather_last_fetched = now
+        weather_id, weather_icon, temp = get_weather_at_location(lat, lon, weather_key)
+    except requests.exceptions.ConnectionError:
+        print("Error")
+        quit()
 else:
     weather_id, weather_icon, temp = weather_obj
 
